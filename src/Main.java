@@ -9,22 +9,26 @@ public class Main {
         int counter=0;  // Counts how many records has been tallied
 
         //Opens the file for reading
-        File file = new File("Records.txt");
+        File file = new File("files/Records.txt");
         Scanner inputFile = new Scanner(file);
 
         //Read values from file line by line and tallies counter and total if it has a next line
         while (inputFile.hasNext()){
-            if(field1 == 0){
-               total = total + field1;
-               counter++;
+            int number = inputFile.nextInt();
+            if(number == 0){
+                total = total + number;
+                counter++;
+                number = inputFile.nextInt();
             }
             else{
-                if(field2 == 0){
-                    System.out.println("The total is: " + total + "The number of records is: " + counter);
+                number = inputFile.nextInt();
+                if(number == 0){
+                    System.out.println("The total is: " + total+"." + " The number of records is: " + counter);
                     counter=0;
                 }
                 else{
-                    total = total - field2;
+                    total = total - number;
+                    counter++;
                 }
             }
             //Prints "End Record"
@@ -34,5 +38,7 @@ public class Main {
         if(counter!=0) {
             System.out.println("The number of records is: " + counter);
         }
+        //Close the file.
+        inputFile.close();
     }
 }
