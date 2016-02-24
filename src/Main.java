@@ -28,16 +28,14 @@ public class Main {
                 }
                 else{
                     total = total - number;
-                    counter++;
                 }
             }
             //Prints "End Record"
             System.out.println("End Record");
         }
         //Prints the record counter
-        if(counter!=0) {
-            System.out.println("The number of records is: " + counter);
-        }
+        System.out.println("The number of records is: " + counter);
+
         //Close the file.
         inputFile.close();
     }
