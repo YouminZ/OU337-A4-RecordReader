@@ -14,20 +14,21 @@ public class Main {
 
         //Read values from file line by line and tallies counter and total if it has a next line
         while (inputFile.hasNext()){
-            int number = inputFile.nextInt();
-            if(number == 0){
-                total = total + number;
+            int field1 = inputFile.nextInt();
+            int field2 = 0;
+            if(field1 == 0){
+                total = total + field1;
                 counter++;
-                number = inputFile.nextInt();
+                field1 = inputFile.nextInt();
             }
             else{
-                number = inputFile.nextInt();
-                if(number == 0){
+                field2 = inputFile.nextInt();
+                if(field2 == 0){
                     System.out.println("The total is: " + total+"." + " The number of records is: " + counter);
                     counter=0;
                 }
                 else{
-                    total = total - number;
+                    total = total - field2;
                 }
             }
             //Prints "End Record"
@@ -38,5 +39,21 @@ public class Main {
 
         //Close the file.
         inputFile.close();
+    }
+
+    public int unit(int a, int b){
+        int total=0;
+        if(a == 0){
+            total = total + a;
+        }
+        else{
+            if(b == 0){
+                System.out.println("The total is: " + total+".");
+            }
+            else{
+                total = total - b;
+            }
+        }
+        return total;
     }
 }
