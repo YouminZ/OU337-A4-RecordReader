@@ -41,17 +41,17 @@ public class Main {
         inputFile.close();
     }
 
-    public int unit(int a, int b){
+    public int unit(int field1, int field2){
         int total=0;
-        if(a == 0){
-            total = total + a;
+        if(field1 == 0){
+            total = total + field1;
         }
         else{
-            if(b == 0){
+            if(field2 == 0){
                 System.out.println("The total is: " + total+".");
             }
             else{
-                total = total - b;
+                total = total - field2;
             }
         }
         return total;
