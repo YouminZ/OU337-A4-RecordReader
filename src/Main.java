@@ -65,6 +65,9 @@ public class Main {
                 total -= field2;
             }
         }
+        //Prints "End Record"
+        System.out.println("End Record");
+
         return total;
     }
 }
